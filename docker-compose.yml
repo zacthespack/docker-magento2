@@ -9,7 +9,7 @@ app:
   volumes_from:
     - appdata
   ports:
-    - 8000:80
+    - 8010
 
 appdata:
   image: tianon/true
