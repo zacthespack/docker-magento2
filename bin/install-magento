@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+php -d memory_limit=-1 /var/www/html/bin/magento setup:install --base-url=$MAGENTO_URL \
+--db-host=$MYSQL_HOST --db-name=$MYSQL_DATABASE --db-user=$MYSQL_USER --db-password=$MYSQL_PASSWORD \
+--admin-firstname=$MAGENTO_ADMIN_FIRSTNAME --admin-lastname=$MAGENTO_ADMIN_LASTNAME --admin-email=$MAGENTO_ADMIN_EMAIL \
+--admin-user=$MAGENTO_ADMIN_USERNAME --admin-password=$MAGENTO_ADMIN_PASSWORD --language=$MAGENTO_LOCALE \
+--currency=$MAGENTO_DEFAULT_CURRENCY --timezone=$MAGENTO_TIMEZONE --use-rewrites=1
+
+chown -R www-data:www-data /var/www/html
